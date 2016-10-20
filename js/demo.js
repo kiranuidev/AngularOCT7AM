@@ -15,13 +15,9 @@ var iAgree = false; //boolean.*/
  */
 
 function add(a,b) {
- var result = a+b;
+ var result = a*b;
     alert(result);
 }
-
-
-
-
 
 //function execution
 add(1,2);
