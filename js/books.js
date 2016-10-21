@@ -21,7 +21,8 @@ function createBook(bookName,authorName,price,bookId){
     book.price=price;
     book.bookId=bookId;
     //the below code add the book to array.
-    books.push(book);
+    //books.push(book);
+    books.splice(books.length+1,1,book);
 }
 
 function getAllBooks(){
