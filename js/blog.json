@@ -1,0 +1,22 @@
+{
+
+    "username": "kiran",
+    "blogContent": "",
+    "createdBy": "kiran",
+    "modifiedBy": "",
+    "comments": [
+        {
+            "commentedBy": "xyz",
+            "commentedDate": "",
+            "commentText": "",
+            "replies": [
+                {
+                    "commentedBy": "xyz",
+                    "commentedDate": "",
+                    "commentText": "",
+                 }
+
+             ]
+         }
+     ]
+}

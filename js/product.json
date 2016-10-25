@@ -1,0 +1,14 @@
+{
+    "productOwner": "owenername",
+    "products": [
+        {
+            productCategory: "Mobiles",
+            "productDetails": [{
+                    "productName": "iPhone7",
+                    "shortDescirption": "this is an awesomphone"
+            }
+            ]
+
+        }
+    ]
+}
