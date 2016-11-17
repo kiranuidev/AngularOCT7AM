@@ -1,0 +1,17 @@
+{
+  "name": "bootstrapdemo",
+  "homepage": "https://github.com/kiranuidev/AngularOCT7AM",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
