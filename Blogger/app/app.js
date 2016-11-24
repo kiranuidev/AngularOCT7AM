@@ -1,7 +1,7 @@
 (function () {
     /*Module Creation*/
     /* Integratre ui.router*/
-    angular.module("BlogFace", ["header", "ui.router", "blog"]);
+    angular.module("BlogFace", ["header", "ui.router", "blog","register"]);
 
     /*consuming the module*/
     angular.module("BlogFace")
@@ -12,7 +12,7 @@
                    2. registering the state object
                    3. Invoking the state
                 */
-
+                 
                 var blogObj = {
                     templateUrl: "app/blog/blog.html",
                     controller: "blogCtrl",
@@ -25,7 +25,8 @@
                 };
                 var registerObj = {
                     templateUrl: "app/register/register.html",
-                    name: "Register"
+                    name: "register",
+                    url:"/register"
                 };
                 var homeObj = {
                     templateUrl: "app/home/home.html",
