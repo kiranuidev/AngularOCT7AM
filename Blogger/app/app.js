@@ -1,7 +1,7 @@
 (function () {
     /*Module Creation*/
     /* Integratre ui.router*/
-    angular.module("BlogFace", ["header", "ui.router", "blog","register"]);
+    angular.module("BlogFace", ["header", "ui.router", "blog","register","login"]);
 
     /*consuming the module*/
     angular.module("BlogFace")
@@ -21,7 +21,8 @@
 
                 var loginObj = {
                     templateUrl: "app/login/login.html",
-                    name: "Login"
+                    name: "Login",
+                    controller:"loginCtrl as lc"
                 };
                 var registerObj = {
                     templateUrl: "app/register/register.html",
