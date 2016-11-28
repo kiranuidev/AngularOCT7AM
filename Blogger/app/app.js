@@ -1,7 +1,7 @@
 (function () {
     /*Module Creation*/
     /* Integratre ui.router*/
-    angular.module("BlogFace", ["header", "ui.router", "blog","register","login"]);
+    angular.module("BlogFace", ["header", "ui.router", "blog","register","login","lookup"]);
 
     /*consuming the module*/
     angular.module("BlogFace")

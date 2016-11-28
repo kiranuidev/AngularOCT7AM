@@ -1,7 +1,7 @@
 (function () {
 
-    function registerCtrl() {
-        this.countries = [{
+    function registerCtrl(registerSvc,lookupSvc) {
+        /*this.countries = [{
                 "name": "India",
                 "code": "IN"
             },
@@ -9,14 +9,25 @@
                 "name": "United States",
                 "code": "US"
             }];
-
+*/
         this.userDetails = {};
 
         this.register = function () {
-            console.log(this.userDetails);
-        }
+            registerSvc.registerUser(this.userDetails);
+        };
+        
+        lookupSvc.getCountries()
+        .then(function(response){
+           this.countries = response.data.countries;
+        }).catch(function(response){
+            console.log(response);
+        })
+        .finally(function(response){
+            console.log(response);
+        });
+        
     }
     angular.module("register")
-        .controller("registerCtrl", [registerCtrl]);
+        .controller("registerCtrl", ["registerSvc","lookupSvc",registerCtrl]);
 
 })();
