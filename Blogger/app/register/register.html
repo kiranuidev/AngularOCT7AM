@@ -28,7 +28,7 @@
         <div class="form-group">
             <label for="select" class="col-lg-2 control-label">Country</label>
             <div class="col-lg-6">
-                <select class="form-control" ng-model="rc.selectedCountry" ng-options=" country.name as country.name for 
+                <select class="form-control" ng-model="rc.selectedCountry" ng-options="country.name for 
                                       country in rc.countries">
                 </select>{{rc.selectedCountry}}
             </div>
@@ -54,5 +54,4 @@
             </div>
         </div>
     </fieldset>
-    {{rc.userDetails}}
 </form>

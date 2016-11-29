@@ -1,11 +1,13 @@
 (
     function(){
         
-        function blogCtrl(){
-            
+        function blogCtrl($http){
+            this.postBlog = function(data){
+                $http.post("")
+            }
         }
         angular.module("blog")
-        .controller("blogCtrl",[blogCtrl]);
+        .controller("blogCtrl",["$http",blogCtrl]);
     }
 
 )();

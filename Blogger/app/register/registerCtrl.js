@@ -1,24 +1,19 @@
 (function () {
 
-    function registerCtrl(registerSvc,lookupSvc) {
-        /*this.countries = [{
-                "name": "India",
-                "code": "IN"
-            },
-            {
-                "name": "United States",
-                "code": "US"
-            }];
-*/
-        this.userDetails = {};
+    function registerCtrl(registerSvc,lookupSvc,$scope) {
+        var vm=this;
+        vm.countries =[];
+        vm.userDetails = {};
 
-        this.register = function () {
+        vm.register = function () {
             registerSvc.registerUser(this.userDetails);
         };
         
         lookupSvc.getCountries()
         .then(function(response){
-           this.countries = response.data.countries;
+           vm.countries = response.data.countries;
+            console.log(this.countries);
+           
         }).catch(function(response){
             console.log(response);
         })
@@ -28,6 +23,6 @@
         
     }
     angular.module("register")
-        .controller("registerCtrl", ["registerSvc","lookupSvc",registerCtrl]);
+        .controller("registerCtrl", ["registerSvc","lookupSvc","$scope",registerCtrl]);
 
 })();
