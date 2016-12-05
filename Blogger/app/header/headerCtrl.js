@@ -7,7 +7,7 @@
         */
         function headerCtrlFn($scope){
             $scope.brandName="Blogger.io";
-            $scope.navItems=["Home","Product","Register","Login"];
+            $scope.navItems=["Home","Product","Register","Login","Users"];
         }
         
         angular.module("header")

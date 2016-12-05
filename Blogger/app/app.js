@@ -1,7 +1,9 @@
 (function () {
     /*Module Creation*/
     /* Integratre ui.router*/
-    angular.module("BlogFace", ["header", "ui.router", "product","register","login","lookup"]);
+    angular.module("BlogFace", ["header", "user",
+    "ui.router", "product","register","login","lookup",
+    'ngTouch', 'ui.grid']);
 
     /*consuming the module*/
     angular.module("BlogFace")
@@ -33,10 +35,16 @@
                     templateUrl: "app/home/home.html",
                     name: "Home"
                 };
+                  var userObj = {
+                    templateUrl: "app/users/user.html",
+                    name: "Users",
+                    controller:"userCtrl"
+                };
                 $stateProvider.state("Product", productObj);
                 $stateProvider.state("Login", loginObj);
                 $stateProvider.state("Register", registerObj);
                 $stateProvider.state("Home", homeObj);
+                $stateProvider.state("Users",userObj);
 
 
 

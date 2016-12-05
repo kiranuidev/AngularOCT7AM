@@ -2,13 +2,16 @@
     function () {
 
         function productCtrl($scope, productSvc) {
-            productSvc.searchProducts("ipod")
+            $scope.search=function(){
+                  productSvc.searchProducts($scope.searchProduct)
                 .then(function (response) {
-                    console.log(response);
+                    $scope.products = response;
                 })
                 .catch(function (response) {
                     console.log(response);
                 });
+            };
+          
         }
         angular.module("product")
             .controller("productCtrl", ["$scope", "productSvc", productCtrl]);
