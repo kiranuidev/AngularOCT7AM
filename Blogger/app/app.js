@@ -3,7 +3,8 @@
     /* Integratre ui.router*/
     angular.module("BlogFace", ["header", "user",
     "ui.router", "product","register","login","lookup",
-    'ngTouch', 'ui.grid',"components"]);
+    'ngTouch', 'ui.grid',"components"
+   ]);
 
     /*consuming the module*/
     angular.module("BlogFace")
