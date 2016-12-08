@@ -24,7 +24,8 @@
                 <div class="caption">
                     <h3 ng-bind="product.name |limitTo:50"></h3>
                     <p ng-bind="product.shortDescription|limitTo:100" ></p>
-                  
+                        <button ng-click="addProductToCart(product)" class="btn btn-primary">Add To Cart</button>
+                        <button class="btn btn-warning">Remove From Cart</button>
                 </div>
             </div>
         </div>

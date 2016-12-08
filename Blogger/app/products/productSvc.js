@@ -10,14 +10,20 @@
         };
 
         function checkData(parameter){
-             return localStorage.getItem(parameter);
+             var data= localStorage.getItem(parameter);
+             if(data){
+                 return data;
+             }
+             else{
+                 return [];
+             }
         }
         
        this.searchProducts= function(parameter){
           // var url ="http://api.walmartlabs.com/v1/search?apiKey=yjrruzc9fgbxvs28qw2rjczv&format=json&query=jeans"
             var productArray = checkData(parameter);
            var dfd=$q.defer();
-            if(productArray){
+            if(productArray.length>0){
                 dfd.resolve(productArray);
             }
             else{
@@ -28,7 +34,7 @@
                  angular.forEach(response.data.items,function(item){
                      productArray.push(productMapper(item));
                  });
-                localStorage.setItem(parameter.toLowercase(),productArray);
+                localStorage.setItem(parameter.toLowerCase(),productArray);
                 
                  console.log(productArray);
                 dfd.resolve(productArray);
