@@ -13,7 +13,12 @@
             };
             $scope.addProductToCart = function(product){
                 product.addedToCart = true;
-                $rootScope.$broadcast("PROUDCT-ADDED");
+                productSvc.addToCart(product);
+                var data = {
+                    salePrice:product.salePrice,
+                    name:product.name
+                }
+                $rootScope.$broadcast("PROUDCT-ADDED",{item:data});
             };
           
         }

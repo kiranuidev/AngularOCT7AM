@@ -1,5 +1,7 @@
 (function(){
     function productSvc($http,$q){
+
+        var cartItems =[];
         function productMapper(input){
             var output={};
             output.name =input.name;
@@ -45,7 +47,16 @@
             });
             }
            return dfd.promise;
-       }
+       };
+       this.addToCart = function(item){
+           cartItems.push(item);
+       };
+       this.getProductFromCart = function(){
+           return cartItems;
+       };
+       this.removeItemsFromCart = function(item){
+
+       };
         
     }
     angular.module("product")

@@ -18,7 +18,14 @@
        
       </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><a href="">Cart {{productCount}} </a></li>
+        <!--<li><a href="">Cart {{productCount}} </a></li>-->
+         <li><a href="" title="Header" data-toggle="popover" 
+         data-placement="bottom" data-content="Content">
+         Cart :<badge> {{productCount}}</badge>
+         Total:<badge> {{totalPrice|currency :"$"}}</badge>
+
+         </a></li>
+         
       </ul>
      
     </div>

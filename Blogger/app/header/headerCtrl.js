@@ -10,7 +10,10 @@
             $scope.navItems=["Home","Product","Register","Login","Users"];
        
             $scope.productCount=0;
+            $scope.totalPrice =0;
             $rootScope.$on("PROUDCT-ADDED",function(evet,args){
+                console.log(args);
+                 $scope.totalPrice +=args.item.salePrice;
                  $scope.productCount++;
             });
  }
