@@ -19,7 +19,11 @@
 
 <body>
     <div class="container">
-        <div ng-include="'app/header/header.html'"></div>
+        <!--<div ng-include="'app/header/header.html'"></div>-->
+        <div nb-header></div>
+        <nb-header></nb-header>
+        <div class="nb-header"><div>
+            <!-- nb-header -->
         <div ui-view></div>
     </div>
     
@@ -50,6 +54,7 @@
     <script src="app/components/components.js"></script>
     <script src="app/components/componentsInitCap.js"></script>
     <script src="app/components/componentsPhoneFormatter.js"></script>
+    <script src="app/components/componentsDirectives.js"></script>
     <script src="app/app.js"></script>
     <script>
 $(document).ready(function(){
