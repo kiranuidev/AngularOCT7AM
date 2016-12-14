@@ -5,8 +5,8 @@
         vm.countries =[];
         vm.userDetails = {};
 
-        vm.register = function () {
-            registerSvc.registerUser(this.userDetails)
+        $scope.register = function () {
+            registerSvc.registerUser(vm.userDetails)
             .then(function(response){
                   console.log(response);
             })
@@ -18,7 +18,7 @@
         lookupFac.getCountries()
         .then(function(response){
            vm.countries = response.data.countries;
-            console.log(this.countries);
+            console.log(vm.countries);
            
         }).catch(function(response){
             console.log(response);

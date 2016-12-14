@@ -1,4 +1,5 @@
-<form class="form-horizontal" ng-controller="registerCtrl as rc">
+<form  class="form-horizontal" ng-controller="registerCtrl as rc" 
+nb-enter="register()">
     <fieldset>
         <legend>Register</legend>
         <div class="form-group">
@@ -38,16 +39,26 @@
             </div>
         </div>
             <div class="form-group">
-            <label class="col-lg-2 control-label"> Age</label>
+            <label class="col-lg-2 control-label"> DOB</label>
             <div class="col-lg-6">
-                <input type="text" class="form-control" placeholder="Age"
-                 ng-model="rc.userDetails.age">
+                <input type="text" class="form-control" placeholder="DOB"
+                 ng-model="rc.userDetails.DoB" nb-date-picker>
+            </div>
+        </div>
+        </div>
+            <div class="form-group">
+            <label class="col-lg-2 control-label">DateOfWedding</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" placeholder="DateOfWedding"
+                 ng-model="rc.userDetails.DateOfWedding" nb-custom-date >
             </div>
         </div>
         <div class="form-group">
             <label for="select" class="col-lg-2 control-label">Country</label>
             <div class="col-lg-6">
-                <select class="form-control" ng-model="rc.selectedCountry" ng-options="country.name for 
+                <select class="form-control" 
+                ng-model="rc.selectedCountry" 
+                ng-options="country.name for 
                                       country in rc.countries">
                 </select>{{rc.selectedCountry}}
             </div>
@@ -70,7 +81,7 @@
         <div class="form-group">
             <label class="col-lg-2 control-label"> </label>
             <div class="col-lg-6 col-lg-offset-4">
-                <button class="btn btn-primary" ng-click="rc.register()">Register</button>
+                <button class="btn btn-primary" ng-click="register()">Register</button>
             </div>
         </div>
     </fieldset>
