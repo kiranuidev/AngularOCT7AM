@@ -5,7 +5,10 @@
 
         function nbBrandName() {
             return {
-                template: '<a class="navbar-brand" href="#">{{brandName}}</a>'
+                template: '<a class="navbar-brand" href="#">{{company}}</a>',
+                scope:{
+                    company:"@"
+                }
             };
         }
 
@@ -68,12 +71,36 @@
                 }
             }
         };
+        function nbDetails(){
+            return{
+                restrict:"A",
+                scope:{
+                    heading:"@",
+                    details:"=",
+                    saveDetails:"&"
+                },
+                compile:function(element, attrs){
+                    console.log(element);
+                    console.log(attrs);
+                    return{
+                        pre:function(scope,element,attrs){
+
+                        },
+                        post:function(scope,element,attrs){
+
+                        }
+                    }
+                },
+                templateUrl:"app/components/nbDetails.html"
+            }
+        }
         angular.module("components")
             .directive("nbBrandName", [nbBrandName])
             .directive("nbHeader",[nbHeader])
             .directive("nbShow",[nbShow])
             .directive("nbDatePicker",[nbDatePicker])
             .directive("nbEnter",[nbEnter])
+            .directive("nbDetails",[nbDetails])
             .directive("nbCustomDate",[nbCustomDate]);
 
     }
