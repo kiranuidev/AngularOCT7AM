@@ -3,7 +3,9 @@
     function registerCtrl(registerSvc,lookupSvc,$scope,lookupFac) {
         var vm=this;
         vm.countries =[];
-        vm.userDetails = {};
+        vm.userDetails = {
+            password:"abcd"
+        };
 
         $scope.register = function () {
             registerSvc.registerUser(vm.userDetails)

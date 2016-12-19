@@ -1,4 +1,4 @@
-<form  class="form-horizontal" ng-controller="registerCtrl as rc" 
+<form  name="register" class="form-horizontal" ng-controller="registerCtrl as rc" 
 nb-enter="register()">
     <fieldset>
         <legend>Register</legend>
@@ -34,8 +34,11 @@ nb-enter="register()">
         <div class="form-group">
             <label class="col-lg-2 control-label"> Password</label>
             <div class="col-lg-6">
-                <input type="password" class="form-control" placeholder="Password"
-                 ng-model="rc.userDetails.password">
+                <input type="password" class="form-control" 
+                placeholder="Password"
+                name="password"
+                 ng-model="rc.userDetails.password" nbpassword>
+                 <p ng-show="register.password.$error.nbpassword">Password must be alphanumeric</p>
             </div>
         </div>
             <div class="form-group">

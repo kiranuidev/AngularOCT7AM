@@ -70,7 +70,7 @@
                     console.log(scope);
                 }
             }
-        };
+        }
         function nbDetails(){
             return{
                 restrict:"A",
@@ -94,6 +94,36 @@
                 templateUrl:"app/components/nbDetails.html"
             }
         }
+
+        function nbpassword(){
+            return{
+                restrict:"A",
+                require:"ngModel",
+                link:function(scope,element,attrs,ctrl){
+                       ctrl.$formatters.unshift(checkValue);
+                    ctrl.$parsers.unshift(checkValue);
+                 
+                    function checkValue(data){
+                        console.log(data);
+                       if(data.length>6 && data.length<10){
+                            ctrl.$setValidity("nbpassword",true);
+                       }
+                       else{
+                           ctrl.$setValidity("nbpassword",false);
+                       }
+//                         var reg = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
+//                         if(reg.test(data)){
+//                             ctrl.$setValidity("nbpassword",true);
+//                         }
+//                         else{
+// ctrl.$setValidity("nbpassword",false);
+//                         }
+                        return data;
+                    }
+
+                }
+            }
+        }
         angular.module("components")
             .directive("nbBrandName", [nbBrandName])
             .directive("nbHeader",[nbHeader])
@@ -101,7 +131,8 @@
             .directive("nbDatePicker",[nbDatePicker])
             .directive("nbEnter",[nbEnter])
             .directive("nbDetails",[nbDetails])
-            .directive("nbCustomDate",[nbCustomDate]);
+            .directive("nbCustomDate",[nbCustomDate])
+            .directive("nbpassword",[nbpassword]);
 
     }
 )();
