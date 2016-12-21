@@ -7,7 +7,7 @@
         <div class="form-group" ng-class="{ 'has-error' : loginForm.email.$invalid && loginForm.email.$dirty }">
             <label class="col-lg-2 control-label">Email</label>
             <div class="col-lg-6">
-                <input type="text" class="form-control" name="email" placeholder="Email" ng-model="lc.loginDetails.email" ng-required="true" ng-minlength="6" ng-pattern='lc.emailRegex' ;>
+                <input type="text" class="form-control" name="email" placeholder="Email" ng-model="loginDetails.email" ng-required="true" ng-minlength="6" ng-pattern='emailRegex' ;>
                 <div ng-show="loginForm.email.$dirty">
 <!--
                     <p ng-show="loginForm.email.$error.minlength" class="help-block">Email should be 6 characters minimum</p>
@@ -22,7 +22,7 @@
         <div class="form-group">
             <label class="col-lg-2 control-label">Password</label>
             <div class="col-lg-6">
-                <input type="text" class="form-control" placeholder="Password" ng-model="lc.loginDetails.password">
+                <input type="text" class="form-control" placeholder="Password" ng-model="loginDetails.password">
             </div>
         </div>
         
@@ -31,7 +31,7 @@
             <div class="col-lg-6 col-lg-offset-4">
                 <input name ="agree"
                        type="checkbox"
-                       ng-model="lc.loginDetails.agree"
+                       ng-model="loginDetails.agree"
                        ng-required="true">
                 
                 <p ng-show="loginForm.agree.$error.required"> Please select agree</p>
@@ -45,6 +45,6 @@
                         ng-disabled ="loginForm.$invalid"
                         ng-click="login()">Login</button>
             </div>
-        </div>{{lc.loginDetails}}
+        </div>{{loginDetails}}
     </fieldset>
 </form>

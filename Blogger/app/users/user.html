@@ -11,11 +11,11 @@
     </thead>
     <tbody>
         <tr ng-repeat="user in users|limitTo:userCount">
-            <td>{{$index+1}}</td>
-            <td>{{user.name|Initcap}}</td>
-            <td>{{user.company|lowercase}}</td>
-            <td>{{user.email|Initcap}}</td>
-            <td>{{user.phoneNumber|PhoneFormatter:countryCode}}</td>
+            <td>{{::$index+1}}</td>
+            <td>{{::user.name|Initcap}}</td>
+            <td>{{::user.company|lowercase}}</td>
+            <td>{{::user.email|Initcap}}</td>
+            <td>{{::user.phoneNumber|PhoneFormatter:countryCode}}</td>
             <td><button ng-click="editUser(user)" class="btn btn-warning">Edit</button>
         </tr>
     </tbody>

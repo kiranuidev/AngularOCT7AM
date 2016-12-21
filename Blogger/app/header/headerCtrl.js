@@ -5,7 +5,7 @@
           controller Name
           callbackFunction
         */
-        function headerCtrlFn($scope,$rootScope){
+        function headerCtrlFn($scope,$rootScope,$translate){
             $scope.brandName="Blogger.io";
             $scope.navItems=["Home","Product","Register","Login","Users"];
        
@@ -16,10 +16,14 @@
                  $scope.totalPrice +=args.item.salePrice;
                  $scope.productCount++;
             });
+            $scope.changeLang=function(type){
+                $translate.use(type);
+            };
  }
         
         angular.module("header")
-        .controller("headerCtrl",["$scope","$rootScope",headerCtrlFn]);
+        .controller("headerCtrl",["$scope","$rootScope","$translate",
+        headerCtrlFn]);
         
         
     })();

@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         
         <li ng-repeat="item in navItems">
-            <a  ui-sref="{{item}}">{{item}}</a></li>
+            <a  ui-sref="{{item}}">{{item|uppercase|translate}}</a></li>
        
       </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -28,7 +28,8 @@
 
          </a></li>
          <li class="" a-cd nb-show><a href="#">showLink</a></li>
-         
+         <li class=""><a href="" ng-click="changeLang('en')">English</a><li>
+           <li class=""><a href="" ng-click="changeLang('de')">Deutsch</a><li>
       </ul>
      
     </div>

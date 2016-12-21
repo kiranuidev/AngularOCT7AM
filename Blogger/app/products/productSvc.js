@@ -30,7 +30,7 @@
             }
             else{
           
-            $http.get('/WM/search?apiKey=yjrruzc9fgbxvs28qw2rjczv&format=json&query='+parameter)
+            $http.post("/api",{"FirstName":"Kiran"})
             .then(function(response){
                 
                  angular.forEach(response.data.items,function(item){
