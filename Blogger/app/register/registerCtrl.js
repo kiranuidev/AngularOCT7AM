@@ -1,6 +1,7 @@
 (function () {
 
-    function registerCtrl(registerSvc,lookupSvc,$scope,lookupFac) {
+    function registerCtrl(registerSvc,lookupSvc,$scope,lookupFac,countryList) {
+        console.log(countryList);
         var vm=this;
         vm.countries =[];
         vm.userDetails = {
@@ -31,6 +32,6 @@
         
     }
     angular.module("register")
-        .controller("registerCtrl", ["registerSvc","lookupSvc","$scope","lookupFac",registerCtrl]);
+        .controller("registerCtrl", ["registerSvc","lookupSvc","$scope","lookupFac","countries",registerCtrl]);
 
 })();

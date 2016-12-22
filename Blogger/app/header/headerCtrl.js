@@ -5,10 +5,10 @@
           controller Name
           callbackFunction
         */
-        function headerCtrlFn($scope,$rootScope,$translate){
+        function headerCtrlFn($scope,$rootScope,$translate,version){
             $scope.brandName="Blogger.io";
             $scope.navItems=["Home","Product","Register","Login","Users"];
-       
+            console.log(version);
             $scope.productCount=0;
             $scope.totalPrice =0;
             $rootScope.$on("PROUDCT-ADDED",function(evet,args){
@@ -22,7 +22,7 @@
  }
         
         angular.module("header")
-        .controller("headerCtrl",["$scope","$rootScope","$translate",
+        .controller("headerCtrl",["$scope","$rootScope","$translate","version",
         headerCtrlFn]);
         
         
